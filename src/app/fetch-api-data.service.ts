@@ -7,13 +7,14 @@ import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
 const apiUrl = 'https://marcotony-13489.herokuapp.com/';
+// Get token from localStorage
+const token = localStorage.getItem('token');
+// Get username from localStorage for endpoints
+const username = localStorage.getItem('user');
+
 @Injectable({
   providedIn: 'root'
 })
-export class FetchApiDataService {
-
-  constructor(private http: HttpClient) { }
-}
 
 export class UserRegistrationService {
   // Inject the HttpClient module to the constructor params
