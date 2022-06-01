@@ -1,0 +1,11 @@
+{
+    
+    "mode": "no-cors",
+    "apiUrl": {
+        "target": "https://marcotony-13489.herokuapp.com/",
+        "secure": false
+        
+        
+    }
+    
+}
