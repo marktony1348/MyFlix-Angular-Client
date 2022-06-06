@@ -3,25 +3,25 @@ $cardColor: #add8e6;
 $textColor: #343a40;
 $boxShadowColor: #e9ecef;
 
-.synopsis-dialog {
+.genre-dialog {
     background-color: $cardColor;
     margin-top: 0px;
     box-shadow: none;
 }
 
-.synopsis-dialog-title {
+.genre-dialog-title {
     color: $textColor;
 }
 
-.synopsis-dialog-content {
+.genre-dialog-content {
     color: $textColor;
 }
 
-::ng-deep .synopsis-custom>mat-dialog-container {
+::ng-deep .genre-custom>mat-dialog-container {
     background-color: $cardColor;
 }
 
-.synopsis-close-button.mat-stroked-button {
+.genre-close-button.mat-stroked-button {
     position: absolute;
     top: 0;
     right: 0;

@@ -1,4 +1,4 @@
-<!-- <app-navbar></app-navbar> -->
+<app-navbar></app-navbar>
 <div class="user-profile-page">
   <!-- User Profile -->
   <mat-card class="user-profile-card">
@@ -24,9 +24,55 @@
         <mat-icon>delete_forever</mat-icon>
         Delete Profile
       </button>
-
     </mat-card-actions>
   </mat-card>
+  <br>
 
-  <!-- Display Favorite Movies -->
+  <div *ngIf="displayElement; else message" class="movies-container">
+    
+    <mat-card *ngFor="let movie of favoriteMovies; let i = index" class="favorite-movie">
+      <!-- <mat-dialog-content> -->
+        <mat-card-header>
+            <mat-card-title class="movies-title">{{movie.Title}}</mat-card-title>
+                <mat-card-subtitle
+                color="primary"
+                (click)="openDirectorDialog(
+                    movie.Director.Name, 
+                    movie.Director.Bio)"
+                >Directed by: {{movie.Director.Name}}
+                </mat-card-subtitle>
+                
+            </mat-card-header>
+            <button
+            class="unfavorite-button"
+            mat-button
+            color="grey"
+            (click)="removeFavoriteMovie(movie._id, movie.Title)"
+          >
+            Unfavorite
+            <mat-icon [ngStyle]="{'color':'white'}" (click)="removeFavoriteMovie(movie._id, movie.Title)">favorite</mat-icon>
+          </button>
+          <img class="movie-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbbX2d0IdlSj5HthEmg19NBPXLtionIVjh8w&usqp=CAU"
+        />
+        <mat-card-actions>
+          <button
+            mat-button
+            class="details-button"
+            (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)"
+        >
+            Genre: {{movie.Genre.Name}}
+        </button>
+        <button
+            mat-button
+            class="details-button"
+            (click)="openSynopsisDialog(movie.Title, movie.ImagePath, movie.Description)"
+        >
+            More Info
+        </button>
+        </mat-card-actions>
+    </mat-card>
+  </div>
+  <ng-template #message>
+    <h3>You don't have any favourite movies in your list</h3>
+  </ng-template>
 </div>
