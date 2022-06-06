@@ -6,13 +6,11 @@ import { map } from 'rxjs/operators';
 
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://marcotony-13489.herokuapp.com/';
+const apiUrl = "https://marcotony-13489.herokuapp.com/";
 // Get token from localStorage
 const token = localStorage.getItem('token');
 // Get username from localStorage for endpoints
 const username = localStorage.getItem('user');
-
-
 
 
 
@@ -25,6 +23,7 @@ export class UserRegistrationService {
   // Inject the HttpClient module to the constructor params
  // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {
+    
     
   }
  

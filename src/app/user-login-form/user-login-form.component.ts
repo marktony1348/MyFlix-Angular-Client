@@ -2,6 +2,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserRegistrationService } from '../fetch-api-data.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class UserLoginFormComponent implements OnInit {
   constructor(
     public fetchApiData: UserRegistrationService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public router: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +35,8 @@ loginUser(): void {
    this.snackBar.open(response, 'OK', {
       duration: 2000
    });
+  //  this functionality (Router) is to create a routing path for all app components 
+   this.router.navigate(['movies']);
   }, (response) => {
     this.snackBar.open(response, 'OK', {
       duration: 2000
