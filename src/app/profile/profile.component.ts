@@ -55,6 +55,7 @@ export class ProfileComponent implements OnInit {
       width: '300px'
     })
   }
+  
 
   /**
    * deletes the user profile, redirects to welcome screen
